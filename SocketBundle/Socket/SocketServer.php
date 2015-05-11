@@ -24,6 +24,13 @@ class SocketServer extends SocketBase
      * @access protected
      */
     protected $logger;
+    /**
+     * reference to a utils instance
+     * 
+     * @var mixed
+     * @access protected
+     */
+    protected $utils;
     
     /**
      * array of socket stream references
@@ -106,11 +113,12 @@ class SocketServer extends SocketBase
      * @param mixed $port (default: false)
      * @return void
      */
-    public function __construct($logger, $eventDispatcher, $serializer)
+    public function __construct($logger, $eventDispatcher, $serializer, $utils)
     {
         $this->logger = $logger;
         $this->eventDispatcher = $eventDispatcher;
         $this->serializer = $serializer;
+        $this->utils = $utils;
     }
     
     public function __destruct()
@@ -358,16 +366,16 @@ class SocketServer extends SocketBase
             
             $evt->setMessage($input);
             
-            $data = $this->serializer->unserialize($input, $this->serializeFormat);
+            /*$data = $this->serializer->unserialize($input, $this->serializeFormat);
             
-            $evt->setData($data);
+            $evt->setData($data);*/
             
             $this->dispatch($evt);
             
             if($socketStream->isClosed()){
                 $this->close($stream);
             }
-            $this->logger->debug("Received information from a socket ". substr($input, 0, 35));
+            $this->utils->postPoint($message);
         }
     }
     

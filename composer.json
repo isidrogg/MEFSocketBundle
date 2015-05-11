@@ -1,5 +1,5 @@
 {
-    "name": "mef/socket-bundle",
+    "name": "isidrogg/socket-bundle",
     "type": "symfony-bundle",
     "description": "Symfony MEFSocketBundle",
     "keywords": ["socket tcp websocket server client"],
@@ -7,8 +7,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Matthew Foster",
-            "email": "mattfoster01@gmail.com"
+            "name": "Isidro García García",
+            "email": "isidrogg@gmail.com"
         }
     ],
     "minimum-stability": "dev",

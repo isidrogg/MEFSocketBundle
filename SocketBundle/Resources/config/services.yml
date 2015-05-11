@@ -9,7 +9,7 @@ parameters:
 services:
     mef.socket.server:
         class: %mef.socket.server.class%
-        arguments: [@logger, @event_dispatcher, @mef.serializer]
+        arguments: [@logger, @event_dispatcher, @mef.serializer, @platform_utils]
     
     mef.socket.client:
         class: %mef.socket.client.class%
