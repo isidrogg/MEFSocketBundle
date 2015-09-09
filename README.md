@@ -13,7 +13,7 @@ You need to [get composer][6] and install that if you haven't already. If you do
 via the composer console command, don't be a sissy, you can do it. Now go to your symfony application root directory
 and modify the composer.json.  Add this to the required section:
 
-    "mef/socket-bundle": "dev-master"
+    "isidrogg/socket-bundle": "dev-master"
     
 Once that's been situated, run your composer command and update your application.
 
