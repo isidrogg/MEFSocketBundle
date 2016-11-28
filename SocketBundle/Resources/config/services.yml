@@ -55,7 +55,7 @@ services:
     mef.serializer:
         class: Symfony\Component\Serializer\Serializer
         arguments:
-            - [@mef.serializer.normalizer]
+            - ['@mef.serializer.normalizer']
             - json: @mef.serializer.encoder.json
               plain: @mef.serializer.encoder.plain
             
